@@ -2,7 +2,7 @@
 
 🎉 查看线上体验请点击：[https://github.com/Givenchy-Coisini/Givenchy-fyj-wzry/issues](https://github.com/Givenchy-Coisini/Givenchy-fyj-wzry/issues) 
 
-🌠 此项目使用了Vue全家桶+Nodejs+Express+MongoDB进行开发,旨在打通全栈能力、为开源提供自己的一份力量. 如果对您有帮助，请给一个⭐️Star。如果在使用过程中发现问题，请给我 [反馈](https://github.com/Givenchy-Coisini/Givenchy-fyj-wzry/issues) 我会尽量在第一时间解决。
+🌠 此项目使用了Vue全家桶+ Element-ui + Nodejs+ Express+ MongoDB + mongoose +Nginx + PM2进行开发,旨在打通全栈能力、为开源提供自己的一份力量. 如果对您有帮助，请给一个⭐️Star。如果在使用过程中发现问题，请给我 [反馈](https://github.com/Givenchy-Coisini/Givenchy-fyj-wzry/issues) 我会尽量在第一时间解决。
 
 ## 🔌 使用方法
 
