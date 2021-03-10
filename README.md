@@ -1,8 +1,8 @@
 # 仿王者荣耀手机端官网/后台管理系统 v1.0.0
 
-🎉 查看页面UI请点击：[https://sesine.com/mina](https://sesine.com/mina/) 
+🎉 查看线上体验请点击：[https://github.com/Givenchy-Coisini/Givenchy-fyj-wzry/issues](https://github.com/Givenchy-Coisini/Givenchy-fyj-wzry/issues) 
 
-🌠 此项目使用了Vue全家桶+Nodejs+Express+MongoDB进行开发,旨在打通全栈能力、为开源提供自己的一份力量. 如果对您有帮助，请给一个⭐️Star。如果在使用过程中发现问题，请给我 [反馈](https://github.com/Givenchy-Coisini/Givenchy-fyj-wzry/issues) 我会尽量在第一时间解决。
+🌠 此项目使用了Vue全家桶+ Element-ui + Nodejs+ Express+ MongoDB + mongoose +Nginx + PM2进行开发,旨在打通全栈能力、为开源提供自己的一份力量. 如果对您有帮助，请给一个⭐️Star。如果在使用过程中发现问题，请给我 [反馈](https://github.com/Givenchy-Coisini/Givenchy-fyj-wzry/issues) 我会尽量在第一时间解决。
 
 ## 🔌 使用方法
 
@@ -87,10 +87,12 @@
 2. 使用阿里云OSS云存储存放上传文件
 ## ❤️ 感谢与支持
 - 全栈之巅开源项目 https://github.com/yuchuangye/wang-moba
+- b站链接：https://www.bilibili.com/video/BV1A4411Y7fi
 
 ## 🚀 v2.0更新内容
 
-- 暂时没有、暂时等Vue3.0+TS学完了在v2.0进行项目重构
+- 暂时没有、暂时等Vue3.0+ TS学完了在v2.0进行项目重构
+- 暂时打算v2.0采用Vue3.0+ TS + Ant Design Vue +Vite2.0 + Sequelize +Mysql + Nodejs +Koa2 +Nginx + PM2 等技术栈进行开发
 
 ## 📅 更新日志
 
@@ -100,3 +102,4 @@
     + 1.初始化项目:服务端(后端)、后台管理系统、移动端
     + 2.更新README
     + 3.按需加载Element-ui 进行优化
+    + 4.完成前端后端连接 提交数据到数据库 在列表页查询全部
