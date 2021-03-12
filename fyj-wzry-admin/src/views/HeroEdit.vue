@@ -1,11 +1,11 @@
 <template>
   <div>
-    <h2>{{ id ? "编辑" : "新建" }}物品</h2>
+    <h2>{{ id ? "编辑" : "新建" }}英雄</h2>
     <el-form label-width="120px" @submit.native.prevent="save">
-      <el-form-item label="物品名称">
-        <el-input v-model="model.name" placeholder="请输入物品名称"></el-input>
+      <el-form-item label="英雄名称">
+        <el-input v-model="model.name" placeholder="请输入英雄名称"></el-input>
       </el-form-item>
-      <el-form-item label="物品图标">
+      <el-form-item label="英雄头像">
         <!-- 样式需要调整 -->
         <el-upload
           class="avatar-uploader"
@@ -13,7 +13,7 @@
           :show-file-list="false"
           :on-success="afterUpload"
         >
-          <img v-if="model.icon" :src="model.icon" class="avatar" />
+          <img v-if="model.avatar" :src="model.avatar" class="avatar" />
           <i v-else class="el-icon-plus avatar-uploader-icon"></i>
         </el-upload>
       </el-form-item>
@@ -32,7 +32,10 @@ export default {
   },
   data () {
     return {
-      model: {}
+      model: {
+        name: '',
+        avatar: ''
+      }
     }
   },
   methods: {
@@ -40,25 +43,25 @@ export default {
       let res // eslint-disable-line no-unused-vars
       if (this.id) {
         // 编辑
-        res = await this.$http.put(`rest/items/${this.id}`, this.model)
+        res = await this.$http.put(`rest/heros/${this.id}`, this.model)
       } else {
         // 新建
-        res = await this.$http.post('rest/items', this.model)
+        res = await this.$http.post('rest/heros', this.model)
       }
-      this.$router.push('/items/lists')
+      this.$router.push('/heros/lists')
       this.$message({
         type: 'success',
         message: '保存成功'
       })
     },
     async fetch () {
-      const res = await this.$http.get(`rest/items/${this.id}`)
+      const res = await this.$http.get(`rest/heros/${this.id}`)
       this.model = res.data
     },
     afterUpload (res) {
-      this.$set(this.model, 'icon', res.url)
+      // this.$set(this.model, 'avatar', res.url)  刚开始model中没有的话 要用这个
       console.log(res)
-      // this.model.icon = res.url
+      this.model.avatar = res.url
     }
   },
   created () {

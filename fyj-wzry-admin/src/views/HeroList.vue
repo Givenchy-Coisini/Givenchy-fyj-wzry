@@ -1,11 +1,11 @@
 <template>
   <div>
-    <h2>物品列表</h2>
+    <h2>英雄列表</h2>
     <el-table :data="items">
       <el-table-column prop="_id" label="ID" width="240"> </el-table-column>
-      <el-table-column prop="name" label="物品名称" width="200">
+      <el-table-column prop="name" label="英雄名称" width="200">
       </el-table-column>
-       <el-table-column prop="name" label="图标" width="200">
+       <el-table-column prop="name" label="英雄头像" width="200">
          <template slot-scope="scope">
            <img :src="scope.row.icon" style="height:3rem;">
          </template>
@@ -15,7 +15,7 @@
           <el-button
             size="mini"
             type="primary"
-            @click="$router.push(`/items/edit/${scope.row._id}`)"
+            @click="$router.push(`/heros/edit/${scope.row._id}`)"
             >编辑</el-button
           >
           <el-button size="mini" type="danger" @click="remove(scope.row)"
@@ -39,7 +39,7 @@ export default {
   },
   methods: {
     async fetch () {
-      const res = await this.$http.get('rest/items')
+      const res = await this.$http.get('rest/heros')
       this.items = res.data
     },
     async remove (row) {
@@ -49,7 +49,7 @@ export default {
         type: 'warning'
       })
         .then(async () => {
-          const res = await this.$http.delete(`rest/items/${row._id}`, this.model)// eslint-disable-line no-unused-vars
+          const res = await this.$http.delete(`rest/heros/${row._id}`, this.model)// eslint-disable-line no-unused-vars
           this.$message({
             type: 'success',
             message: '删除成功'
