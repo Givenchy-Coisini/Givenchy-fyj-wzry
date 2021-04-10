@@ -91,14 +91,19 @@
 
 ## 🚀 v2.0更新内容
 
-- 暂时没有、暂时等Vue3.0+ TS学完了在v2.0进行项目重构
-- 暂时打算v2.0采用Vue3.0+ TS + Ant Design Vue +Vite2.0 + Sequelize +Mysql + Nodejs +Koa2 +Nginx + PM2 等技术栈进行开发
+- 暂时没有、暂时等React + TS学完了在v2.0进行项目重构
+- 暂时打算v2.0采用React + TS + Ant Design + Sequelize +Mysql + Nodejs +Koa2 +Nginx + PM2 等技术栈进行开发
 
 ## 📅 更新日志
 
 > v1.0的旧版本代码可以通过master分支中的 [tag]() 中找到
+- **v1.0.4** 2021-04-10
+    + 1.修复bug
+    + 2.复习前6节
+    + 3.更新README
 
-- **v1.0.2** 2021-03-12
+
+- **v1.0.3** 2021-03-12
     + 1.完成图片上传
     + 2.完成英雄的前端管理
     + 3.更新README
