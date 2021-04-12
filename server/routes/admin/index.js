@@ -1,7 +1,7 @@
 module.exports = app => {
     const express = require('express')
     const router = express.Router(
-        { mergeParams: true } //合并路由参数
+        { mergeParams: true } //合并路由参数  因为是在app.use定义的参数 在路由中用到了参数
     )
     // const Category = require('../../models/Category')
 
@@ -16,6 +16,7 @@ module.exports = app => {
     // 查全部(列表)
     router.get('/', async (req, res) => {
         let queryOptions = {}
+        // 有的页面需要关联有的页面不需要
         if (req.Model.modelName === 'Category') {
             queryOptions.populate = 'parent'
         }
@@ -41,11 +42,12 @@ module.exports = app => {
     })
     // rest风格   :resource 通用接口风格  匹配任意资源
     app.use('/admin/api/rest/:resource', async (req, res, next) => {
-        //采用通用接口以后需要  找到对应的模型 小写复数改为大写单数
+        // todo 先在中间件中转换 然后next去调用router
+        //采用通用接口以后需要 inflection  找到对应的模型 小写复数改为大写单数
         const modelName = require('inflection').classify(req.params.resource)
         req.Model = require(`../../models/${modelName}`)
         next()
-    }, router)
+    }, router) // express 子路由挂载上去
     // 处理图片
     const multer = require('multer')
     const upload = multer({dest:__dirname +'../../uploads'})

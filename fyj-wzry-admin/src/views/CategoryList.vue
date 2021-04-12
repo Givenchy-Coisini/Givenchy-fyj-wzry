@@ -53,12 +53,6 @@ export default {
           // todo 删除成功以后重新获取一下数据
           this.fetch()
         })
-        .catch(() => {
-          this.$message({
-            type: 'info',
-            message: '已取消删除'
-          })
-        })
     }
   }
 }

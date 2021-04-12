@@ -6,6 +6,7 @@
             <el-input v-model="model.name"></el-input>
             </el-form-item>
              <el-form-item label="上级分类">
+            <!-- parent是一父级分类的id -->
             <el-select v-model="model.parent">
               <!-- label 是显示的内容 value 是真正选中的值-->
               <el-option v-for="item in parents" :key="item._id" :label="item.name" :value="item._id" ></el-option>
