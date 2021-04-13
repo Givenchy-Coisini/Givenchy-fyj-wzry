@@ -13,7 +13,7 @@
           :show-file-list="false"
           :on-success="afterUpload"
         >
-          <img v-if="model.icon" :src="model.icon" class="avatar" />
+          <img v-if="model.icon" :src="model.icon" class="avatar" >
           <i v-else class="el-icon-plus avatar-uploader-icon"></i>
         </el-upload>
       </el-form-item>
@@ -56,6 +56,7 @@ export default {
       this.model = res.data
     },
     afterUpload (res) {
+      // vue的显示赋值
       this.$set(this.model, 'icon', res.url)
       console.log(res)
       // this.model.icon = res.url
@@ -67,8 +68,8 @@ export default {
 }
 </script>
 
-<style>
-     .avatar-uploader .el-upload {
+<style scoped>
+  .avatar-uploader .el-upload {
     border: 1px dashed #d9d9d9;
     border-radius: 6px;
     cursor: pointer;

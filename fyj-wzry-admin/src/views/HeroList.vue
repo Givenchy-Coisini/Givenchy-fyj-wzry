@@ -7,7 +7,7 @@
       </el-table-column>
        <el-table-column prop="name" label="英雄头像" width="200">
          <template slot-scope="scope">
-           <img :src="scope.row.icon" style="height:3rem;">
+           <img :src="scope.row.avatar" style="height:3rem;">
          </template>
       </el-table-column>
       <el-table-column label="操作" width="180">
@@ -43,7 +43,7 @@ export default {
       this.items = res.data
     },
     async remove (row) {
-      this.$confirm('此操作将永久删除该分类,是否继续?', '提示', {
+      this.$confirm('此操作将永久删除该英雄,是否继续?', '提示', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
         type: 'warning'

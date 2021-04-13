@@ -5,7 +5,7 @@
       <el-table-column prop="_id" label="ID" width="240"> </el-table-column>
       <el-table-column prop="name" label="物品名称" width="200">
       </el-table-column>
-       <el-table-column prop="name" label="图标" width="200">
+       <el-table-column prop="icon" label="图标" width="200">
          <template slot-scope="scope">
            <img :src="scope.row.icon" style="height:3rem;">
          </template>
