@@ -56,9 +56,3 @@
   color: #333;
 }
 </style>
-
-<script>
-export default {
-  data () {}
-}
-</script>
