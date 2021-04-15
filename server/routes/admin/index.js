@@ -57,3 +57,4 @@ module.exports = app => {
         res.send(file)
     })
 }
+// 22 5分钟
