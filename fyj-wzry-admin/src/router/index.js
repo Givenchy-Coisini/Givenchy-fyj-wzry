@@ -12,6 +12,8 @@ import ArticleEdit from '../views/ArticleEdit.vue'
 import ArticleList from '../views/ArticleList.vue'
 import AdEdit from '../views/AdEdit.vue'
 import AdList from '../views/AdList.vue'
+import AdminUserEdit from '../views/AdminUserEdit.vue'
+import AdminUserList from '../views/AdminUserList.vue'
 
 Vue.use(VueRouter)
 
@@ -25,18 +27,21 @@ const routes = [
       { path: '/categories/create', component: CategoryEdit },
       { path: '/items/create', component: ItemEdit },
       { path: '/heros/create', component: HeroEdit },
+      { path: '/admin_users/create', component: AdminUserEdit },
       { path: '/ads/create', component: AdEdit },
       { path: '/articles/create', component: ArticleEdit },
       { path: '/heros/lists', component: HeroList },
       { path: '/articles/lists', component: ArticleList },
       { path: '/categories/lists', component: CategoryList },
+      { path: '/admin_users/lists', component: AdminUserList },
       { path: '/ads/lists', component: AdList },
       { path: '/items/lists', component: ItemList },
       { path: '/items/edit/:id', component: ItemEdit, props: true },
       { path: '/heros/edit/:id', component: HeroEdit, props: true },
       { path: '/articles/edit/:id', component: ArticleEdit, props: true },
-      { path: '/ads/edit/:id', component: AdEdit, props: true },
-      { path: '/categories/edit/:id', component: CategoryEdit, props: true }
+      { path: '/categories/edit/:id', component: CategoryEdit, props: true },
+      { path: '/admin_users/edit/:id', component: AdminUserEdit, props: true },
+      { path: '/ads/edit/:id', component: AdEdit, props: true }
     ]
   }
 ]
