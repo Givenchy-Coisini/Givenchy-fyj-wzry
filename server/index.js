@@ -2,7 +2,8 @@ const express = require('express')
 
 const app = express()
 app.use(express.json())
-
+// 设置一个变量
+app.set('secret','mwj1010')
 //解决跨域问题
 app.use(require('cors')())
 

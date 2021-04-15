@@ -50,11 +50,35 @@ module.exports = app => {
     }, router) // express 子路由挂载上去
     // 处理图片
     const multer = require('multer')
-    const upload = multer({dest:__dirname +'../../uploads'})
-    app.post('/admin/api/upload',upload.single('file'),async(req,res)=>{
+    const upload = multer({ dest: __dirname + '../../uploads' })
+    app.post('/admin/api/upload', upload.single('file'), async (req, res) => {
         const file = req.file
         file.url = `http://localhost:3000/uploads/${file.filename}`
         res.send(file)
     })
+
+    app.post('/admin/api/login', async (req, res) => {
+        const { username, password } = req.body
+        // 1.根据用户名找用户
+        const AdminUser = require('../../models/AdminUser')
+        const user = await AdminUser.findOne({ username }).select('+password')
+        // 2.校验密码
+        if (!user) {
+            return res.status(422).send({
+                message: "用户不存在"
+            })
+        }
+        const isValid = require('bcryptjs').compareSync(password, user.password)
+        if (!isValid) {
+            return res.status(422).send({
+                message: "账号或密码错误"
+            })
+        }
+        // 3.返回token
+        const jwt = require('jsonwebtoken')
+        const token = jwt.sign({
+            id: user._id
+        }, app.get('secret'))
+        res.send({token})
+    })
 }
-// 22 5分钟

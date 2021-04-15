@@ -23,8 +23,16 @@ export default {
     }
   },
   methods: {
-    login () {
-      console.log('tag', this.model)
+    async login () {
+      const res = await this.$http.post('login', this.model)
+      console.log('tag', res)
+      // 一般放cookie 里
+      localStorage.token = res.data.token
+      this.$router.push('/')
+      this.$message({
+        type: 'success',
+        message: '登录成功'
+      })
     }
   }
 }
