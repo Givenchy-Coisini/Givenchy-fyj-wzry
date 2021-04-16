@@ -1,4 +1,4 @@
-import './style.scss'
+import './style.scss' // 需要放在最上面
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
