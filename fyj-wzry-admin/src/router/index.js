@@ -18,7 +18,11 @@ import AdminUserList from '../views/AdminUserList.vue'
 Vue.use(VueRouter)
 
 const routes = [
-  { path: '/login', name: 'login', component: Login },
+  {
+    path: '/login', name: 'login', component: Login, meta: {
+      isPublic: true
+    }
+  },
   {
     path: '/',
     name: 'Main',
@@ -50,6 +54,14 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+// 每次切换路由的时候要做什么
+router.beforeEach((to, from, next)=>{
+  console.log(to.meta)
+  if(!to.meta.isPublic && !localStorage.token){
+    return next('/login')
+  }
+  next()
 })
 
 export default router

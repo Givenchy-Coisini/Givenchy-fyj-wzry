@@ -9,7 +9,8 @@
         <!-- 样式需要调整 -->
         <el-upload
           class="avatar-uploader"
-          :action="$http.defaults.baseURL + '/upload'"
+          :action="uploadUrl"
+          :headers="getAuthHeaders()"
           :show-file-list="false"
           :on-success="afterUpload"
         >
