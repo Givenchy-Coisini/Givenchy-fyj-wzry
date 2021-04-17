@@ -4,6 +4,5 @@
   </div>
 </template>
 
-<style>
-
+<style lang="scss">
 </style>

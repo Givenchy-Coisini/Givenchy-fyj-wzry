@@ -127,7 +127,7 @@ $spacing-sizes: (
             #{$type}-left:$size*$spacing-base-size;
             #{$type}-right:$size*$spacing-base-size
         }
-        .#{$typeKey}x-#{$sizeKey}{
+        .#{$typeKey}y-#{$sizeKey}{
             #{$type}-top:$size*$spacing-base-size;
             #{$type}-bottom:$size*$spacing-base-size
         }
