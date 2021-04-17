@@ -52,10 +52,92 @@ $font-sizes: (
     sm: 0.923077,
     md: 1,
     lg: 1.0769,
-    xl: 1.2308
+    xl: 1.2308,
 );
 @each $sizeKey, $size in $font-sizes {
     .fs-#{$sizeKey} {
         font-size: $size - $base-font-size;
+    }
+}
+
+// flex
+.d-flex {
+    display: flex;
+}
+.flex-column {
+    flex-direction: column;
+}
+$flex-jc: (
+    start: flex-start,
+    end: flex-end,
+    center: center,
+    between: space-between,
+    around: space-around,
+);
+@each $jcKey, $jc in $flex-jc {
+    .jc-#{jcKey} {
+        justify-content: $jc;
+    }
+}
+$flex-ai: (
+    start: flex-start,
+    end: flex-end,
+    center: center,
+    stretch: stretch,
+);
+@each $aiKey, $ai in $flex-ai {
+    .ai-#{aiKey} {
+        justify-content: $ai;
+    }
+}
+.flex-1 {
+    flex: 1; // flex-grow:1;
+}
+// spacing
+// mt-1 margin-top level 1
+$spacing-types: (
+    m: margin,
+    p: padding,
+);
+$spacing-directions: (
+    t: top,
+    r: right,
+    b: bottom,
+    l: left,
+);
+$spacing-base-size: 1.5rem;
+$spacing-sizes: (
+    0: 0,
+    1: 0.25,
+    2: 0.5,
+    3: 1,
+    4: 1.5,
+    5: 3,
+);
+@each $typeKey, $type in $spacing-types {
+    //.m-1
+    @each $sizeKey, $size in $spacing-sizes {
+        .#{$typeKey}-#{$sizeKey}{
+            #{$type}:$size*$spacing-base-size
+        }
+    }
+    //.mx-1
+    @each $sizeKey, $size in $spacing-sizes {
+        .#{$typeKey}x-#{$sizeKey}{
+            #{$type}-left:$size*$spacing-base-size;
+            #{$type}-right:$size*$spacing-base-size
+        }
+        .#{$typeKey}x-#{$sizeKey}{
+            #{$type}-top:$size*$spacing-base-size;
+            #{$type}-bottom:$size*$spacing-base-size
+        }
+    }
+    //.mt-1
+    @each $directionKey, $direction in $spacing-directions {
+        @each $sizeKey, $size in $spacing-sizes {
+            .#{$typeKey}#{$directionKey}-#{$sizeKey}{
+                #{$type}-#{$direction}:$size*$spacing-base-size
+            }
+        }
     }
 }
