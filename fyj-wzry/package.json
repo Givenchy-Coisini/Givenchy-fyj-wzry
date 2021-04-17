@@ -11,6 +11,7 @@
     "core-js": "^3.6.5",
     "sass-loader": "^9.0.0",
     "vue": "^2.6.11",
+    "vue-awesome-swiper": "^4.1.1",
     "vue-router": "^3.2.0"
   },
   "devDependencies": {

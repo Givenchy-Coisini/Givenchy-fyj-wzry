@@ -13,6 +13,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.2em;
     background: #f1f1f1;
+    -webkit-font-smoothing:antialiased;
 }
 a {
     color: #999;
@@ -24,6 +25,7 @@ $colors: (
     "white": #fff,
     "light": #f9f9f9,
     "grey": #999,
+    "grey-1":#666,
     "dark-1": #343440,
     "dark": #222,
     "black": #000,
@@ -33,7 +35,7 @@ $colors: (
     .text-#{$colorKey} {
         color: $color;
     }
-    .bg-#{colorKet} {
+    .bg-#{$colorKey} {
         background-color: $color;
     }
 }
@@ -75,7 +77,7 @@ $flex-jc: (
     around: space-around,
 );
 @each $jcKey, $jc in $flex-jc {
-    .jc-#{jcKey} {
+    .jc-#{$jcKey} {
         justify-content: $jc;
     }
 }
@@ -86,7 +88,7 @@ $flex-ai: (
     stretch: stretch,
 );
 @each $aiKey, $ai in $flex-ai {
-    .ai-#{aiKey} {
+    .ai-#{$aiKey} {
         justify-content: $ai;
     }
 }
@@ -140,4 +142,22 @@ $spacing-sizes: (
             }
         }
     }
+}
+// btn 
+.btn {
+    border: none;
+    border-radius: .153846rem;
+    font-size: map-get($font-sizes , 'sm') * $base-font-size;
+    padding: 0.2rem 0.6rem;
+}
+//nav
+.nav {
+    .nav-item {
+        border-bottom: 3px solid transparent;
+        padding-bottom: 0.2rem;
+        &.active {
+        border-bottom: 3px solid #fff;
+        }
+    }
+   
 }
