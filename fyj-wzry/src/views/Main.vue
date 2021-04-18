@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- 第6个 的 7分钟 -->
+    <!-- 第7个 的 3分钟 -->
     <div class="topbar bg-black py-2 px-4 d-flex ai-center">
       <img src="../assets/logo.png" alt="" height="30" />
       <div class="px-2 flex-1">
