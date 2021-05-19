@@ -29,6 +29,7 @@ $colors: (
     "dark-1": #343440,
     "dark": #222,
     "black": #000,
+    "info": #4b67af
 );
 // 对象 键值对
 @each $colorKey, $color in $colors {
@@ -43,7 +44,7 @@ $colors: (
 // text  数组
 @each $var in (left, center, right) {
     .text-#{$var} {
-        text-align: $var;
+        text-align: $var !important;
     }
 }
 
@@ -61,7 +62,13 @@ $font-sizes: (
         font-size: $size - $base-font-size;
     }
 }
-
+// width height
+.w-100 {
+    width: 100%;
+}
+.h-100 {
+    height: 100%;
+}
 // flex
 .d-flex {
     display: flex;
