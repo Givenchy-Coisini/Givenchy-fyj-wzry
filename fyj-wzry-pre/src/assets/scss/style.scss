@@ -1,0 +1,187 @@
+// reset
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+//基础字体大小
+html {
+    font-size: 13px;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.2em;
+    background: #f1f1f1;
+    -webkit-font-smoothing:antialiased;
+}
+a {
+    color: #999;
+}
+
+// colors
+$colors: (
+    "primary": #db9e3f,
+    "white": #fff,
+    "light": #f9f9f9,
+    "grey": #999,
+    "grey-1":#666,
+    "dark-1": #343440,
+    "dark": #222,
+    "black": #000,
+    "info": #4b67af
+);
+// 对象 键值对
+@each $colorKey, $color in $colors {
+    .text-#{$colorKey} {
+        color: $color;
+    }
+    .bg-#{$colorKey} {
+        background-color: $color;
+    }
+}
+
+// text  数组
+@each $var in (left, center, right) {
+    .text-#{$var} {
+        text-align: $var !important;
+    }
+}
+
+// font size
+$base-font-size: 1rem;
+$font-sizes: (
+    xs: 0.769231,
+    sm: 0.923077,
+    md: 1,
+    lg: 1.0769,
+    xl: 1.2308,
+);
+@each $sizeKey, $size in $font-sizes {
+    .fs-#{$sizeKey} {
+        font-size: $size - $base-font-size;
+    }
+}
+// width height
+.w-100 {
+    width: 100%;
+}
+.h-100 {
+    height: 100%;
+}
+// flex
+.d-flex {
+    display: flex;
+}
+.flex-column {
+    flex-direction: column;
+}
+.flex-wrap {
+    flex-wrap: wrap;
+}
+$flex-jc: (
+    start: flex-start,
+    end: flex-end,
+    center: center,
+    between: space-between,
+    around: space-around,
+);
+@each $jcKey, $jc in $flex-jc {
+    .jc-#{$jcKey} {
+        justify-content: $jc;
+    }
+}
+$flex-ai: (
+    start: flex-start,
+    end: flex-end,
+    center: center,
+    stretch: stretch,
+);
+@each $aiKey, $ai in $flex-ai {
+    .ai-#{$aiKey} {
+        justify-content: $ai;
+    }
+}
+.flex-1 {
+    flex: 1; // flex-grow:1;
+}
+// spacing
+// mt-1 margin-top level 1
+$spacing-types: (
+    m: margin,
+    p: padding,
+);
+$spacing-directions: (
+    t: top,
+    r: right,
+    b: bottom,
+    l: left,
+);
+$spacing-base-size: 1.5rem;
+$spacing-sizes: (
+    0: 0,
+    1: 0.25,
+    2: 0.5,
+    3: 1,
+    4: 1.5,
+    5: 3,
+);
+@each $typeKey, $type in $spacing-types {
+    //.m-1
+    @each $sizeKey, $size in $spacing-sizes {
+        .#{$typeKey}-#{$sizeKey}{
+            #{$type}:$size*$spacing-base-size
+        }
+    }
+    //.mx-1
+    @each $sizeKey, $size in $spacing-sizes {
+        .#{$typeKey}x-#{$sizeKey}{
+            #{$type}-left:$size*$spacing-base-size;
+            #{$type}-right:$size*$spacing-base-size
+        }
+        .#{$typeKey}y-#{$sizeKey}{
+            #{$type}-top:$size*$spacing-base-size;
+            #{$type}-bottom:$size*$spacing-base-size
+        }
+    }
+    //.mt-1
+    @each $directionKey, $direction in $spacing-directions {
+        @each $sizeKey, $size in $spacing-sizes {
+            .#{$typeKey}#{$directionKey}-#{$sizeKey}{
+                #{$type}-#{$direction}:$size*$spacing-base-size
+            }
+        }
+    }
+}
+// btn 
+.btn {
+    border: none;
+    border-radius: .153846rem;
+    font-size: map-get($font-sizes , 'sm') * $base-font-size;
+    padding: 0.2rem 0.6rem;
+}
+//nav
+.nav {
+    .nav-item {
+        border-bottom: 3px solid transparent;
+        padding-bottom: 0.2rem;
+        &.active {
+        border-bottom: 3px solid #fff;
+        }
+    }
+   
+}
+
+// sprits
+.sprite {
+    background: url(../images/index.png) no-repeat 0 0;
+    background-size: 28.846154rem;
+    display: inline-block;
+    &.sprite-news {
+        width: 3.461538rem;
+        height: 3.076923rem;
+        background-position: -34.461538rem -10.384615rem;
+    }
+// 第10min
+}
+// 8 min
