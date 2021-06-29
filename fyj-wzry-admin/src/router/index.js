@@ -19,7 +19,10 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/login', name: 'login', component: Login, meta: {
+    path: '/login',
+    name: 'login',
+    component: Login,
+    meta: {
       isPublic: true
     }
   },
@@ -56,9 +59,9 @@ const router = new VueRouter({
   routes
 })
 // 每次切换路由的时候要做什么
-router.beforeEach((to, from, next)=>{
+router.beforeEach((to, from, next) => {
   console.log(to.meta)
-  if(!to.meta.isPublic && !localStorage.token){
+  if (!to.meta.isPublic && !localStorage.token) {
     return next('/login')
   }
   next()

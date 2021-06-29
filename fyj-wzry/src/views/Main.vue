@@ -35,7 +35,7 @@ export default {
 
 <style lang="scss">
 .topbar {
-  position: sticky;
+  position: sticky; // 吸顶效果 第12个3min
   top: 0;
   z-index: 999;
 }

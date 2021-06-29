@@ -28,7 +28,7 @@
     </div>
     <!-- end of nav icons -->
     <!-- 第10 个的9min -->
-<!-- 
+
     <m-list-card icon="menu1" title="新闻资讯" :categories="newsCats">
       <template #items="{category}">
         <router-link 
@@ -61,7 +61,7 @@
     </m-list-card>
 
     <m-card icon="menu1" title="精彩视频"></m-card>
-    <m-card icon="menu1" title="图文攻略"></m-card> -->
+    <m-card icon="menu1" title="图文攻略"></m-card>
   </div>
 </template>
 
@@ -82,7 +82,7 @@ export default {
         },
         autoplay: true,
       },
-      newsCats: [],
+      newsCats: [], // 新闻分类
       heroCats: []
     };
   }

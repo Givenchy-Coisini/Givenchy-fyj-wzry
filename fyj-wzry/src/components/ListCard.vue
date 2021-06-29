@@ -27,7 +27,7 @@ export default {
   },
   data(){
     return {
-      active: 0
+      active: 0 // 默认高亮的索引值
     }
   }
 };
